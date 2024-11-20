@@ -1,14 +1,14 @@
-from dataclasses import dataclass
-from datetime import datetime
+from pydantic import BaseModel, EmailStr
+from datetime import date
 from typing import Optional
 
-
-@dataclass()
-class User:
-    id: Optional[int]
-    email: str
+class User(BaseModel):
+    id: int
     username: str
-    hashed_password: str
+    email: EmailStr
+    password: str
+    role: Optional[str] = "user"
+    date_of_birth: Optional[date] = None
+    phone_number: Optional[str] = None
     is_active: bool = True
-    created_at: datetime = datetime.utcnow()
-    updated_at: datetime = datetime.utcnow();
+
