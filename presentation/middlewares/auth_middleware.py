@@ -14,20 +14,24 @@ class AuthMiddleware(BaseHTTPMiddleware):
         self.get_db_session = get_db_session
 
     async def dispatch(self, request: Request, call_next):
-        if "Authorization" in request.headers:
-            token = request.headers["Authorization"].split("Bearer ")[1]
-            session = await self.get_db_session().__anext__()
-            try:
-                payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-                user_id = payload.get("sub")
-                user_repo = UserRepositoryImpl(session)
-                user = await user_repo.get_by_id(user_id, session)
-                if not user:
-                    raise HTTPException(status_code=401, detail="Invalid user.")
-                request.state.current_user = user
-            except JWTError:
-                raise HTTPException(status_code=401, detail="Invalid token.")
+        session = None
+        try:
+            if "Authorization" in request.headers:
+                token = request.headers["Authorization"].split("Bearer ")[1]
+                session = await self.get_db_session().__anext__()
+                try:
+                    payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+                    user_id = payload.get("sub")
+                    user_repo = UserRepositoryImpl(session)
+                    user = await user_repo.get_by_id(user_id, session)
+                    if not user:
+                        raise HTTPException(status_code=401, detail="Invalid user.")
+                    request.state.current_user = user
+                except JWTError:
+                    raise HTTPException(status_code=401, detail="Invalid token.")
 
-        response = await call_next(request)
-        await session.close()
-        return response
+            response = await call_next(request)
+            return response
+        finally:
+            if session:
+                await session.close()

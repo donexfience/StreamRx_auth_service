@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d76782b2-fe8a-488d-9d8c-4d2d6ee867cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_lib/enums/log_level_enum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/interface/token_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/config/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/config/cors_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/logging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/Security/password_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/Security/token_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/database/connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/graphql/mutation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/graphql/queries.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/graphql/schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/use_cases/auth_use_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/use_cases/auth_use_cases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/api/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/api/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/graphql/mutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/graphql/mutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/graphql/queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/graphql/queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/graphql/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/graphql/schema.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,5 +91,15 @@
       <updated>1731676948949</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/presentation/middlewares/auth_middleware.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
